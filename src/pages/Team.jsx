@@ -43,7 +43,7 @@ import HeroTeam from "@/components/ui/HeroTeam";
 import TeamSection from "@/components/TeamSection";
 import Footer from "@/components/Footer";
 
-import { teamMembersss, MentorCard } from "@/components/ui/MentorCard";
+import { teamMembersss, MentorCard } from "@/components/ui/Mentorcard.jsx";
 
 const Team = () => {
   return (
