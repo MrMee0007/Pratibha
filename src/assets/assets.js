@@ -20,7 +20,7 @@ import Image8 from './Photo3.jpeg';
 import Image9 from './Photo11.jpeg';
 import Image10 from './Photo12.jpeg';
 import Image11 from './Photo13.jpeg';
-import Image12 from './photo14.jpeg';
+import Image12 from './Photo14.jpeg';
 import Logo from './Logo.png';
 import video1 from './videos/v1.mp4';
 import video2 from './videos/v2.mp4';
