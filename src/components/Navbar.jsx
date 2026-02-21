@@ -133,6 +133,122 @@
 //   );
 // };
 
+// // export default Navbar;
+// import { useState } from "react";
+// import { Link, useLocation } from "react-router-dom";
+// import { Menu, X, ArrowUpRight } from "lucide-react";
+// import { Logo } from "../assets/assets";
+
+// const Navbar = () => {
+//   const [open, setOpen] = useState(false);
+//   const location = useLocation();
+
+//   const navLinks = [
+//     { name: "Home", path: "/" },
+//     { name: "Portfolio", path: "/portfolio" },
+//     { name: "Services", path: "/services" },
+//     { name: "About", path: "/about" },
+//     { name: "Team", path: "/team" },
+//   ];
+
+//   const handleNavClick = () => {
+//     setOpen(false);
+//     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+//   };
+
+//   return (
+//     <nav className="fixed top-0 left-0 z-50 w-full backdrop-blur-xl bg-black/60 border-b border-white/10 shadow-lg transition-all duration-300">
+//       <div className="mx-auto max-w-7xl px-6">
+//         <div className="flex h-24 items-center justify-between">
+
+//           {/* LOGO */}
+//           <Link to="/" onClick={handleNavClick} className="flex items-center gap-3">
+//             <img src={Logo} alt="Logo" className="h-20 md:h-28 w-auto" />
+//           </Link>
+
+//           {/* DESKTOP NAV */}
+//           <ul className="hidden md:flex items-center gap-12">
+//             {navLinks.map((link) => (
+//               <li key={link.name} className="group relative">
+//                 <Link
+//                   to={link.path}
+//                   onClick={handleNavClick}
+//                   className={`text-lg md:text-xl font-medium transition-all duration-300 ${
+//                     location.pathname === link.path
+//                       ? "text-white"
+//                       : "text-white/80 hover:text-white"
+//                   }`}
+//                 >
+//                   {link.name}
+//                 </Link>
+
+//                 {/* Animated underline */}
+//                 <span className="absolute -bottom-1 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full" />
+
+//                 {/* Soft glow */}
+//                 <span className="absolute -inset-2 -z-10 rounded-full opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-20 bg-gradient-to-r from-blue-500 to-purple-500/10" />
+//               </li>
+//             ))}
+//           </ul>
+
+//           {/* DESKTOP ACTIONS */}
+//           <div className="hidden md:flex items-center gap-4">
+//             <Link
+//               to="/contact"
+//               onClick={handleNavClick}
+//               className="rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10"
+//             >
+//               Contact
+//             </Link>
+
+//             <Link to="/contact" onClick={handleNavClick}>
+//             <button className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black shadow-md transition transform hover:scale-110 hover:shadow-lg">
+//               <ArrowUpRight size={20} />
+//             </button>
+//             </Link>
+//           </div>
+
+//           {/* MOBILE MENU BUTTON */}
+//           <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
+//             {open ? <X size={32} /> : <Menu size={32} />}
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* MOBILE MENU */}
+//       <div
+//         className={`md:hidden fixed top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-xl transition-all duration-500 z-40 ${
+//           open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+//         }`}
+//       >
+//         <div className="flex flex-col items-center justify-center h-full gap-10">
+//           <ul className="flex flex-col items-center gap-8">
+//             {navLinks.map((link) => (
+//               <li key={link.name}>
+//                 <Link
+//                   to={link.path}
+//                   onClick={handleNavClick}
+//                   className="text-3xl font-semibold text-white/90 hover:text-white transition-colors"
+//                 >
+//                   {link.name}
+//                 </Link>
+//               </li>
+//             ))}
+//           </ul>
+
+//           <Link
+//             to="/contact"
+//             onClick={handleNavClick}
+//             className="rounded-full bg-white px-12 py-4 text-lg font-semibold text-black shadow-lg transition transform hover:scale-105"
+//           >
+//             Contact Us
+//           </Link>
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// };
+
 // export default Navbar;
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -153,42 +269,61 @@ const Navbar = () => {
 
   const handleNavClick = () => {
     setOpen(false);
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full backdrop-blur-xl bg-black/60 border-b border-white/10 shadow-lg transition-all duration-300">
-      <div className="mx-auto max-w-7xl px-6">
+    <nav className="fixed top-0 left-0 z-50 w-full">
+      {/* Glass background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-2xl border-b border-white/10" />
+
+      <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex h-24 items-center justify-between">
 
           {/* LOGO */}
-          <Link to="/" onClick={handleNavClick} className="flex items-center gap-3">
-            <img src={Logo} alt="Logo" className="h-20 md:h-28 w-auto" />
+          <Link
+            to="/"
+            onClick={handleNavClick}
+            className="flex items-center gap-3 group"
+          >
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-20 md:h-30 w-auto transition-transform duration-500 group-hover:scale-105"
+            />
+            <span className="absolute -inset-4 -z-10 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 blur-xl group-hover:opacity-100 transition" />
           </Link>
 
           {/* DESKTOP NAV */}
           <ul className="hidden md:flex items-center gap-12">
-            {navLinks.map((link) => (
-              <li key={link.name} className="group relative">
-                <Link
-                  to={link.path}
-                  onClick={handleNavClick}
-                  className={`text-lg md:text-xl font-medium transition-all duration-300 ${
-                    location.pathname === link.path
-                      ? "text-white"
-                      : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                </Link>
+            {navLinks.map((link) => {
+              const active = location.pathname === link.path;
+              return (
+                <li key={link.name} className="relative group">
+                  <Link
+                    to={link.path}
+                    onClick={handleNavClick}
+                    className={`text-lg font-medium tracking-wide transition-all duration-300 ${
+                      active
+                        ? "text-white"
+                        : "text-white/70 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
 
-                {/* Animated underline */}
-                <span className="absolute -bottom-1 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full" />
+                  {/* Underline */}
+                  <span
+                    className={`absolute left-1/2 -bottom-2 h-[2px] -translate-x-1/2 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 ${
+                      active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
 
-                {/* Soft glow */}
-                <span className="absolute -inset-2 -z-10 rounded-full opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-20 bg-gradient-to-r from-blue-500 to-purple-500/10" />
-              </li>
-            ))}
+                  {/* Glow */}
+                  <span className="absolute -inset-4 -z-10 rounded-full opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-30 bg-gradient-to-r from-blue-500 to-purple-500" />
+                </li>
+              );
+            })}
           </ul>
 
           {/* DESKTOP ACTIONS */}
@@ -196,20 +331,25 @@ const Navbar = () => {
             <Link
               to="/contact"
               onClick={handleNavClick}
-              className="rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10"
+              className="relative overflow-hidden rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-white transition hover:border-white/40"
             >
-              Contact
+              <span className="relative z-10">Contact</span>
+              <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition" />
             </Link>
 
             <Link to="/contact" onClick={handleNavClick}>
-            <button className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black shadow-md transition transform hover:scale-110 hover:shadow-lg">
-              <ArrowUpRight size={20} />
-            </button>
+              <button className="relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-white to-gray-200 text-black shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                <ArrowUpRight size={20} />
+                <span className="absolute -inset-2 rounded-full bg-white/30 opacity-0 blur-md hover:opacity-100 transition" />
+              </button>
             </Link>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
-          <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
+          {/* MOBILE BUTTON */}
+          <button
+            className="md:hidden relative z-50 text-white"
+            onClick={() => setOpen(!open)}
+          >
             {open ? <X size={32} /> : <Menu size={32} />}
           </button>
         </div>
@@ -217,18 +357,20 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-xl transition-all duration-500 z-40 ${
-          open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl transition-all duration-700 ${
+          open
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-full pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-10">
+        <div className="flex flex-col items-center justify-center h-full gap-12">
           <ul className="flex flex-col items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
                   to={link.path}
                   onClick={handleNavClick}
-                  className="text-3xl font-semibold text-white/90 hover:text-white transition-colors"
+                  className="text-3xl font-semibold tracking-wide text-white/80 hover:text-white transition-all duration-300"
                 >
                   {link.name}
                 </Link>
@@ -239,7 +381,7 @@ const Navbar = () => {
           <Link
             to="/contact"
             onClick={handleNavClick}
-            className="rounded-full bg-white px-12 py-4 text-lg font-semibold text-black shadow-lg transition transform hover:scale-105"
+            className="rounded-full bg-gradient-to-r from-white to-gray-200 px-14 py-4 text-lg font-semibold text-black shadow-xl transition hover:scale-105"
           >
             Contact Us
           </Link>

@@ -24,7 +24,6 @@ import Image20 from "@/assets/TeamPic/Unnati Lakhwani.jpeg";
 const categoryTitles = {
   founders: "Founders",
   leaders: "Leadership",
-  mentors: "Advisors",
   team: "Core Team",
   members: "Members",
   alumni: "Alumni",
@@ -33,7 +32,6 @@ const categoryTitles = {
 const categoryDescriptions = {
   founders: "Visionaries who laid the foundation",
   leaders: "People shaping the vision and direction",
-  mentors: "Guiding experience & industry expertise",
   team: "The core force behind execution",
   members: "Active contributors and collaborators",
   alumni: "Those who helped build the journey",
@@ -55,55 +53,46 @@ const teamMembers = [
   },
   {
     name: "Parth Agnihotri",
-    role: "Founding Member",
     image: "",
     category: "founders",
   },
   {
     name: "Krishna Soni",
-    role: "Founding Member",
     image: Image8,
     category: "founders",
   },
   {
     name: "Prabhat Uphadhyay",
-    role: "Founding Member",
     image: "",
     category: "founders",
   },
   {
     name: "Adarsh Sikarwar",
-    role: "Founding Member",
     image: "",
     category: "founders",
   },
   {
     name: "Anurag Tomar",
-    role: "Founding Member",
     image: Image6,
     category: "founders",
   },
   {
     name: "Shalini",
-    role: "Founding Member",
     image: "",
     category: "founders",
   },
   {
     name: "Devansh Sharma",
-    role: "Founding Member",
     image: "",
     category: "founders",
   },
   {
     name: "Swasti Jain",
-    role: "Founding Member",
     image: "",
     category: "founders",
   },
   {
     name: "Unnati Lakhwani",
-    role: "Founding Member",
     image: Image20,
     category: "founders",
   },
@@ -111,50 +100,33 @@ const teamMembers = [
   {
     name: "Ayush Chaubey",
     role: "President",
-    image: Image1,
-    category: "founders",
     category: "leaders",
   },
   {
     name: "Parth Agnihotri",
     role: "Vice - President",
     image: "",
-    category: "founders",
-    category: "leaders",
-  },
-  {
-    name: "Abhishek Yadav",
-    role: "General Secretary",
-    image: "",
     category: "leaders",
   },
   {
     name: "Krishna Soni",
     role: "Vice - President",
-    image: "Image8",
+    image: Image8,
     category: "leaders",
   },
-  // Mentors
-  {
-    name: "Anurag Tomar",
-    role: "Advisor",
-    image: Image6,
-    category: "mentors",
-    highlight: true,
-  },
-  {
-    name: "Adarsh Sikarwar",
-    role: "Advisor",
-    image: "",
-    category: "mentors",
-  },
-  {
-    name: "Ansh Garg",
-    role: "Advisor",
-    image: "",
-    category: "mentors",
-  },
   // Team
+    {
+    name: "Abhishek Yadav",
+    role: "General Secretary",
+    image: "",
+    category: "team",
+  },
+    {
+    name: "Yug Gupta",
+    role: "Treasurer",
+    image: "",
+    category: "team",
+  },
   {
     name: "Ronak Porwal",
     role: "Technical Head",
@@ -212,12 +184,6 @@ const teamMembers = [
   {
     name: "Yatin Rao",
     role: "Videography Head",
-    image: "",
-    category: "team",
-  },
-  {
-    name: "Yug Gupta",
-    role: "Treasurer",
     image: "",
     category: "team",
   },
@@ -298,12 +264,33 @@ const teamMembers = [
     category: "alumni",
     date: "2024-2025",
   },
+   {
+    name: "Anurag Tomar",
+    role: "Ex-President",
+    image: Image6,
+    category: "alumni",
+    highlight: true,
+    date: "2024-2025",
+  },
+  {
+    name: "Adarsh Sikarwar",
+    role: "Ex-President",
+    image: "",
+    category: "alumni",
+    date: "2025-2026",
+  },
+  {
+    name: "Ansh Garg",
+    role: "Ex-General Secretary",
+    image: "",
+    category: "alumni",
+    date: "2025-2026",
+  },
 ];
 
 const categories = [
    { key: "founders", label: "Founders" },
   { key: "leaders", label: "Leaders" },
-  { key: "mentors", label: "Advisors" },
   { key: "team", label: "Team" },
   { key: "members", label: "Members" },
   { key: "alumni", label: "Alumni" },

@@ -8,7 +8,7 @@ import residencyImage from "@/assets/Photo2.jpeg";
 import digitalImage from "@/assets/Photo3.jpeg";
 import resourcesImage from "@/assets/Photo7.jpeg";
 import canILiveImage from "@/assets/Photo6.jpeg";
-import { video2 } from '@/assets/assets';
+import { video2, video4 } from '@/assets/assets';
 
 const Portfolio = () => {
   const videos = {
@@ -55,7 +55,7 @@ const Portfolio = () => {
             
             <div className="grid grid-rows-2 gap-4 md:gap-6">
               <VideoCard
-                videoSrc={videos.residency}
+                videoSrc={video4}
                 posterImage={residencyImage}
                 title="2025 MUDLARKS RESIDENCY"
                 subtitle="Until 21.12.2023"
@@ -229,3 +229,183 @@ export default Portfolio;
 // }
 
 // export default Portfolio
+
+// import { useEffect, useRef } from "react";
+// import Navbar from "@/components/Navbar.jsx";
+// import HeroSectionPortfolio from "@/components/ui/HeroSectionPortfolio";
+// import VideoCard from "@/components/VideoCard.jsx";
+
+// import {
+//   video1,
+//   video2,
+//   video3,
+//   video4,
+// } from "@/assets/assets";
+
+// import frame1 from "@/assets/Photo1.jpeg";
+// import frame2 from "@/assets/Photo2.jpeg";
+// import frame3 from "@/assets/Photo3.jpeg";
+// import frame4 from "@/assets/Photo6.jpeg";
+
+// const Portfolio = () => {
+//   const pageRef = useRef(null);
+//   const audioRef = useRef(null);
+
+//   /* 🎵 SCROLL MUSIC */
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (!audioRef.current) return;
+
+//         if (entry.isIntersecting) {
+//           audioRef.current.volume = 0.35;
+//           audioRef.current.play().catch(() => {});
+//         } else {
+//           audioRef.current.pause();
+//         }
+//       },
+//       { threshold: 0.4 }
+//     );
+
+//     if (pageRef.current) observer.observe(pageRef.current);
+//     return () => observer.disconnect();
+//   }, []);
+
+//   return (
+//     <div ref={pageRef} className="min-h-screen bg-background">
+//       <Navbar />
+
+//       {/* 🎧 SCROLL MUSIC */}
+//       {/* <audio ref={audioRef} loop preload="auto">
+//         <source src={} type="audio/mp3" />
+//       </audio> */}
+
+//       <main>
+//         {/* HERO */}
+//         <HeroSectionPortfolio />
+
+//         {/* SECTION TITLE */}
+//         <section className="px-6 md:px-12 py-20 md:py-32">
+//           <div className="flex items-center gap-6 mb-6">
+//             <div className="h-px bg-primary/30 flex-1" />
+//             <span className="text-primary text-sm tracking-[0.4em] uppercase">
+//               Selected Works
+//             </span>
+//             <div className="h-px bg-primary/30 flex-1" />
+//           </div>
+
+//           <h2 className="text-5xl md:text-7xl lg:text-[120px] font-black text-center tracking-tighter">
+//             FILMS & VISUAL STORIES
+//           </h2>
+//         </section>
+
+//         {/* FEATURED FILMS */}
+//         <section className="px-6 md:px-12 pb-24">
+//           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-10">
+//             <VideoCard
+//               videoSrc={video}
+//               posterImage={frame1}
+//               title="THE SILENCE BETWEEN FRAMES"
+//               subtitle="Short Film"
+//               size="featured"
+//             />
+
+//             <div className="grid grid-rows-2 gap-4 md:gap-6">
+//               <VideoCard
+//                 videoSrc={reel2}
+//                 posterImage={frame2}
+//                 title="SHADOWS OF LIGHT"
+//                 subtitle="Cinematic Reel"
+//                 size="small"
+//               />
+//               <VideoCard
+//                 videoSrc={reel3}
+//                 posterImage={frame3}
+//                 title="MOTION & MEMORY"
+//                 subtitle="Commercial Film"
+//                 size="small"
+//               />
+//             </div>
+//           </div>
+
+//           {/* MARQUEE */}
+//           <div className="py-20 overflow-hidden">
+//             <div className="flex whitespace-nowrap animate-marquee">
+//               {["CINEMATOGRAPHY", "LIGHT", "STORY", "FRAME"].map((text, i) => (
+//                 <span
+//                   key={i}
+//                   className="text-[100px] md:text-[180px] font-black text-foreground/5 mx-12"
+//                 >
+//                   {text}
+//                 </span>
+//               ))}
+//             </div>
+//           </div>
+
+//           {/* WIDE FILM */}
+//           <VideoCard
+//             videoSrc={reel4}
+//             posterImage={frame4}
+//             title="BEHIND THE LENS"
+//             subtitle="Documentary Visual"
+//             size="wide"
+//           />
+
+//           {/* DIRECTOR STATEMENT */}
+//           <div className="py-24 md:py-32 text-center max-w-5xl mx-auto">
+//             <div className="text-primary text-7xl font-serif mb-6">“</div>
+//             <blockquote className="text-3xl md:text-5xl font-light leading-tight mb-10">
+//               Cinematography is not about the camera —
+//               <br />
+//               it’s about <span className="font-black">emotion in motion</span>,
+//               light in silence, and stories that breathe.
+//             </blockquote>
+//             <p className="tracking-[0.3em] uppercase text-muted-foreground text-sm">
+//               — Director of Photography
+//             </p>
+//           </div>
+
+//           {/* FINAL GRID */}
+//           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-24">
+//             <VideoCard
+//               videoSrc={reel2}
+//               posterImage={frame2}
+//               title="NIGHT STUDIES"
+//               subtitle="Low Light Experiment"
+//               size="medium"
+//             />
+//             <VideoCard
+//               videoSrc={reel3}
+//               posterImage={frame3}
+//               title="URBAN FRAMES"
+//               subtitle="City Visuals"
+//               size="medium"
+//             />
+//             <VideoCard
+//               videoSrc={reel1}
+//               posterImage={frame1}
+//               title="HUMAN STORIES"
+//               subtitle="Narrative Film"
+//               size="medium"
+//             />
+//           </div>
+//         </section>
+
+//         {/* FOOTER CTA */}
+//         <section className="px-6 md:px-12 py-32 border-t border-foreground/10 text-center">
+//           <p className="text-primary text-sm tracking-[0.4em] uppercase mb-6">
+//             Collaborate
+//           </p>
+//           <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8">
+//             LET’S CREATE<br />
+//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
+//               CINEMA
+//             </span>
+//           </h2>
+//         </section>
+//       </main>
+//     </div>
+//   );
+// };
+
+// export default Portfolio;
