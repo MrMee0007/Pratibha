@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar.jsx";
 import toast from "react-hot-toast";
 
 const Contact = () => {

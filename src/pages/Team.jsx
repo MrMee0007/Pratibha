@@ -38,7 +38,7 @@
 
 import React from "react";
 
-import Navbar from "@/components/navbar.jsx";
+import Navbar from "@/components/Navbar.jsx";
 import HeroTeam from "@/components/ui/HeroTeam";
 import TeamSection from "@/components/TeamSection";
 import Footer from "@/components/Footer";
