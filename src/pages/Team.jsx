@@ -1,5 +1,5 @@
 // import React from 'react'
-// import Navbar from '@/components/navbar.jsx'
+// import Navbar from '@/components/Navbar.jsx'
 // import MediaContentSection from '@/components/ui/MediaContentSection'
 // import teamImage from '@/assets/Team.jpg'
 // import HeroTeam from '@/components/ui/HeroTeam'
